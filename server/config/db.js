@@ -6,7 +6,6 @@ class Database{
         
         this.URI = config.Database.URI_MONGODB;
         this.isConnected = false;
-        console.log(this.URI);
     }
     connect() {
         if(!this.isConnected) {

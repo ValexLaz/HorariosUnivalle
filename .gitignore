@@ -5,3 +5,5 @@
 
 #extras
 .idea/
+
+/playground-1.mongodb.js
