@@ -1,7 +1,9 @@
 import express from "express";
 import config from "./config/config.js";
 import userRoutes from "./modules/users/user.routes.js";
+import semester_routes from "./modules/semesters/semesters.routes.js";
 import morgan from "morgan";
+
 class App{
     #app
     #PORT
@@ -13,6 +15,7 @@ class App{
     }
     #setRoutes(){
         this.#app.use('/api/user',userRoutes);
+        this.#app.use('/api/semester',semester_routes);
     }
     #configure(){
         this.#app.use(morgan('dev'));
