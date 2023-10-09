@@ -30,3 +30,5 @@ class ParentController {
     }
 
 }
+
+export default ParentController;

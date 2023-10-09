@@ -1,3 +1,5 @@
+import ParentController from "../../common/ParentController";
+
 class SemestersController extends ParentController{
     constructor(RecordService) {
      super(RecordService);

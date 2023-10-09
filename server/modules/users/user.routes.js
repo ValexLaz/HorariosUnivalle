@@ -2,8 +2,8 @@ import {Router} from "express";
 import {authJwt} from "../../middleware";
 import * as type_user from "./middleware/verifyTypeUser.js";
 const router = Router();
-import UserRecord from "./controllers/UserRecord";
-import UserController from "./controllers/user.controller";
+import UserRecord from "./controllers/UserRecord.js";
+import UserController from "./controllers/user.controller.js";
 
 const CtrlUser = new UserController(UserRecord);
 

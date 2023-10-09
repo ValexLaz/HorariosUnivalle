@@ -1,5 +1,5 @@
-import Class from "./class.model";
-import * as response from "../../common/response";
+
+import ParentController from "../../common/ParentController";
 
 class ClassController extends ParentController{
     constructor() {

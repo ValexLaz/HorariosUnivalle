@@ -1,3 +1,4 @@
+import ParentController from "../../common/ParentController";
 
 
 class UniProgramsController extends ParentController{

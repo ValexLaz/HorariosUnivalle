@@ -13,6 +13,7 @@ class RecordService {
             const new_record = await new this.model(data).save();
             return this.buildResponseSuccess(new_record,`new ${this.model.collection.name} created`)
         }catch (e) {
+            console.error(e)
             return  this.buildResponseError(e.message)
         }
     }
@@ -23,6 +24,7 @@ class RecordService {
                 record_deleted,
                 "record deleted");
         } catch (e) {
+            console.error(e)
             return this.buildResponseError(e.message);
         }
     }
@@ -31,6 +33,7 @@ class RecordService {
             const record_update =  await this.model.findByIdAndUpdate(id,data,{new:true});
             return  this.buildResponseSuccess(record_update)
         }catch (e) {
+            console.error(e)
             return  this.buildResponseError(e.message);
         }
     }
@@ -39,6 +42,7 @@ class RecordService {
             const records =   await this.model.find(params);
             return  this.buildResponseSuccess(records,`${records.lean} records`);
         }catch (e) {
+            console.error(e)
             return this.buildResponseError(e.message);
         }
     }
@@ -47,6 +51,7 @@ class RecordService {
             const record = await this.model.findOne(params)
             return this.buildResponseSuccess(record);
         }catch (e) {
+            console.error(e)
             return  this.buildResponseError(e.message);
         }
     }

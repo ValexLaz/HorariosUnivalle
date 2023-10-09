@@ -5,7 +5,7 @@ import semesterRoutes from "./modules/semesters/semesters.routes.js";
 import classRouter from "./modules/class/class.router";
 import facultyRoutes from "./modules/faculties/faculties.routes";
 import UniProgramsRoutes from "./modules/university_programs/university_programs.routes";
-
+import cors from "cors";
 import morgan from "morgan";
 
 class App{
@@ -25,6 +25,7 @@ class App{
         this.#app.use('/api/uniPrograms',UniProgramsRoutes);
     }
     #configure(){
+        this.#app.use(cors());
         this.#app.use(morgan('dev'));
         this.#app.use(express.json());
     }
