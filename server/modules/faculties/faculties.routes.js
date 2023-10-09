@@ -1,10 +1,12 @@
 import {Router} from "express";
 import FacultiesController from "./faculties.controller";
-import FacultiesRecord from "./models/FacultiesRecord";
-const CtrlFaculty = new FacultiesController(FacultiesRecord);
+import FacultiesRecord from "./FacultiesRecord";
+import Faculty from "./faculties.model.js";
+const facultyRecord = new FacultiesRecord(Faculty)
+const CtrlFaculty = new FacultiesController(facultyRecord);
 const router = Router();
 
-router.post('/create',CtrlFaculty.create_record)
+router.post('/create',CtrlFaculty.add_record)
 router.get('/:id',CtrlFaculty.getRecordById);
 router.put('/:id',CtrlFaculty.update_record);
 router.delete('/id',CtrlFaculty.delete_record);

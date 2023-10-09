@@ -1,9 +1,11 @@
 
+
 import ParentController from "../../common/ParentController";
 
 class ClassController extends ParentController{
-    constructor() {
-        super();
+    constructor(recordService) {
+        console.log("ClassController",recordService)
+        super(recordService);
     }
     async getAllClassBySemester(req,res){
         const {id} = req.params;

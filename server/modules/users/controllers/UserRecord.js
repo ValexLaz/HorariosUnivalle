@@ -5,6 +5,7 @@ import * as tokenJWT from "../../../config/auth";
 class UserRecord extends RecordService{
     constructor() {
         super(User);
+
     }
     async signin(email,password){
         try {

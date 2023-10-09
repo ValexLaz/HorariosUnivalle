@@ -2,8 +2,13 @@
 class ParentController {
     constructor(recordService){
         this.recordService = recordService;
+        this.add_record = this.add_record.bind(this);
+        this.delete_record  = this.delete_record.bind(this);
+        this.update_record = this.update_record.bind(this);
+        this.getRecordById = this.getRecordById.bind(this);
+        this.get_all_records = this.get_all_records.bind(this);
     }
-    async create_record(req,res){
+    async add_record(req,res){
        const new_record =  await this.recordService.create_record(req.body);
        this.response(res,new_record);
     }
@@ -32,3 +37,4 @@ class ParentController {
 }
 
 export default ParentController;
+

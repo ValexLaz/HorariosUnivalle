@@ -1,7 +1,11 @@
+
 import ParentController from "../../../common/ParentController.js"
+
 class UserController extends ParentController{
     constructor(recordService) {
         super(recordService);
+        this.signing = this.signing.bind(this);
+        this.create_record = this.create_record.bind(this);
     }
     async signing(req,res){
         const {email,password} = req.body;

@@ -1,11 +1,9 @@
 import RecordService from "../../common/recordService";
 
-
-class ClassRecord extends RecordService{
+class FacultiesRecord extends RecordService{
     constructor(model) {
         super(model);
-        console.log(model)
     }
 }
 
-export default ClassRecord;
+export default FacultiesRecord;
