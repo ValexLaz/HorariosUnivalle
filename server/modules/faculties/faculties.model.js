@@ -4,19 +4,15 @@ const faculties_schema = new mongoose.Schema({
   _id: {
     type: String,
     unique: true,
-    required: true,
   },
   name: {
     type: String,
-    required: true,
   },
   description: {
     type: String,
-    required: true,
   },
   id_module_id: {
     type: String,
-    required: true,
     ref: 'module', // Referencia al modelo "modules"
   },
 });

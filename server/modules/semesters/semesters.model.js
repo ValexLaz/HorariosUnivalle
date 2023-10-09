@@ -5,15 +5,12 @@ const semesters_schema = new mongoose.Schema({
   _id: {
     type: String,
     unique: true,
-    required: true,
   },
   name: {
     type: String,
-    required: true,
   },
   university_program_id: {
     type: String,
-    required: true,
     ref: 'university_program', // Referencia al modelo "university_programs"
   },
 });
