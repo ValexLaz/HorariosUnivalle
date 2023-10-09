@@ -1,8 +1,12 @@
 import  {Router} from "express";
-import  * as ctrl_semester from "./semesters.controller.js"
+import SemestersController from "./semesters.controller";
+import SemesterRecord from "./models/SemesterRecord";
+const CtrlSemester = new SemestersController(SemesterRecord);
+
 const router = Router();
-router.post('/create',ctrl_semester.create_semester);
-router.delete("/:id",ctrl_semester.delete_semester_by_id);
-router.put("/:id",ctrl_semester.update_semester);
-router.get('/program/:id',ctrl_semester.get_all_semester_by_program);
+
+router.post('/create',CtrlSemester.create_record);
+router.delete("/:id",CtrlSemester.delete_record);
+router.put("/:id",CtrlSemester.update_record);
+router.get('/program/:id',CtrlSemester.getAllSemesterByProgram);
 export default router;

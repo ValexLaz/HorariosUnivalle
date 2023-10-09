@@ -1,17 +1,20 @@
 import {Router} from "express";
-import * as CtrlUser from "./user.controller.js";
 import {authJwt} from "../../middleware";
 import * as type_user from "./middleware/verifyTypeUser.js";
 const router = Router();
+import UserRecord from "./controllers/UserRecord";
+import UserController from "./controllers/user.controller";
+
+const CtrlUser = new UserController(UserRecord);
 
 router.post('/create',authJwt.verify
                             ,type_user.verify_super_admin
-                            ,CtrlUser.createUser);
-router.delete("/:id",CtrlUser.deleteUser);
-router.put("/:id",CtrlUser.updateUser);
-router.get('/all',authJwt.verify,CtrlUser.getAllUser);
-router.get('/:id',CtrlUser.get_user);
-router.post('/signin',CtrlUser.signin);
+                            ,CtrlUser.create_record);
+router.delete("/:id",CtrlUser.delete_record);
+router.put("/:id",CtrlUser.update_record);
+router.get('/all',authJwt.verify,CtrlUser.get_all_records);
+router.get('/:id',CtrlUser.getRecordById);
+router.post('/signing',CtrlUser.signing);
 export default router;
 
 

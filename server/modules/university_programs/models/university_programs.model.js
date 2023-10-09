@@ -1,5 +1,5 @@
 import mongoose from 'mongoose';
-
+//Carreras (Ing. de sistemas , Biomedica,etc)
 // Esquema de la colección "university_programs"
 const university_programs_schema= new mongoose.Schema({
   id: {
@@ -22,7 +22,6 @@ const university_programs_schema= new mongoose.Schema({
   },
 });
 
-// Crea el modelo "university_programs" utilizando el esquema
 const university_programs_model = mongoose.model('university_program', university_programs_schema);
 
 export default university_programs_model;

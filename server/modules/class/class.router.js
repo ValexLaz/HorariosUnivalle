@@ -1,8 +1,12 @@
 import  {Router} from "express";
-import  * as ctrl_class from "./class.controller.js"
+import ClassController from "./class.controller";
+import classRecord from "./ClassRecord.js";
+const CtrlClass =  new  ClassController(classRecord)
+
 const router = Router();
-router.post('/create',ctrl_class.create_class);
-router.delete("/:id",ctrl_class.delete_class_by_id);
-router.put("/:id",ctrl_class.update_class);
-router.get('/semester/:id',ctrl_class.get_all_class_by_semester);
+router.post('/create',CtrlClass.create_record);
+router.delete("/:id",CtrlClass.delete_record);
+router.put("/:id",CtrlClass.update_record);
+router.get('/:id',CtrlClass.getRecordById)
+router.get('/semester/:id',CtrlClass.getAllClassBySemester);
 export default router;

@@ -1,7 +1,11 @@
 import express from "express";
 import config from "./config/config.js";
 import userRoutes from "./modules/users/user.routes.js";
-import semester_routes from "./modules/semesters/semesters.routes.js";
+import semesterRoutes from "./modules/semesters/semesters.routes.js";
+import classRouter from "./modules/class/class.router";
+import facultyRoutes from "./modules/faculties/faculties.routes";
+import UniProgramsRoutes from "./modules/university_programs/university_programs.routes";
+
 import morgan from "morgan";
 
 class App{
@@ -15,7 +19,10 @@ class App{
     }
     #setRoutes(){
         this.#app.use('/api/user',userRoutes);
-        this.#app.use('/api/semester',semester_routes);
+        this.#app.use('/api/semester',semesterRoutes);
+        this.#app.use('/api/class',classRouter);
+        this.#app.use('/api/faculty',facultyRoutes);
+        this.#app.use('/api/uniPrograms',UniProgramsRoutes);
     }
     #configure(){
         this.#app.use(morgan('dev'));

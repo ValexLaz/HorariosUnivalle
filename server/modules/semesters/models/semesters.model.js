@@ -2,7 +2,7 @@ import mongoose from 'mongoose';
 
 // Esquema de la colección "semester"
 const semesters_schema = new mongoose.Schema({
-  id: {
+  _id: {
     type: String,
     unique: true,
     required: true,
