@@ -2,11 +2,6 @@ import mongoose from 'mongoose';
 //Carreras (Ing. de sistemas , Biomedica,etc)
 // Esquema de la colección "university_programs"
 const university_programs_schema= new mongoose.Schema({
-  id: {
-    type: String,
-    unique: true,
-    required: true,
-  },
   name: {
     type: String,
     required: true,

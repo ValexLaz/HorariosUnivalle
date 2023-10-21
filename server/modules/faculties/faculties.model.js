@@ -1,10 +1,6 @@
 import mongoose from 'mongoose';
 // Esquema de la colección "faculties"
 const faculties_schema = new mongoose.Schema({
-  _id: {
-    type: String,
-    unique: true,
-  },
   name: {
     type: String,
   },

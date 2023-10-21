@@ -1,5 +1,3 @@
-
-
 import ParentController from "../../common/ParentController";
 
 class ClassController extends ParentController{

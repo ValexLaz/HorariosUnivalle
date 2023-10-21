@@ -1,10 +1,6 @@
 import {Schema,model} from "mongoose";
 // Schema de clase (materia)
 const class_schema =  new Schema({
-    _id:{
-        type:String,
-        required:true
-    },
     name:{
         type:String,
         required:true,
