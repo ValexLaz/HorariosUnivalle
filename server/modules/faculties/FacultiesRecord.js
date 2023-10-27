@@ -5,5 +5,4 @@ class FacultiesRecord extends RecordService{
         super(model);
     }
 }
-
 export default FacultiesRecord;

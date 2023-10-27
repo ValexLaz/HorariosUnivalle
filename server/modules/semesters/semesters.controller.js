@@ -3,6 +3,7 @@ import ParentController from "../../common/ParentController";
 class SemestersController extends ParentController{
     constructor(RecordService) {
      super(RecordService);
+     this.getAllSemesterByProgram = this.getAllSemesterByProgram.bind(this);
     }
     async getAllSemesterByProgram(req,res){
         const {id} = req.params;
@@ -11,5 +12,4 @@ class SemestersController extends ParentController{
         this.response(res,semesters)
     }
 }
-
 export  default SemestersController;

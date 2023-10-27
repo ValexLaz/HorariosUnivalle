@@ -1,5 +1,5 @@
 
-import ParentController from "../../../common/ParentController.js"
+import ParentController from "../../common/ParentController.js"
 
 class UserController extends ParentController{
     constructor(recordService) {

@@ -4,9 +4,7 @@ import ClassRecord from "./ClassRecord.js";
 import Class from "./class.model.js";
 
 const router = Router();
-
 const classRecord = new ClassRecord(Class);
-console.log("class router ", classRecord)
 const CtrlClass =  new  ClassController(classRecord)
 
 router.post('/create',CtrlClass.add_record);

@@ -1,11 +1,13 @@
 import {Router} from "express";
 import {authJwt} from "../../middleware";
 import * as type_user from "./middleware/verifyTypeUser.js";
-const router = Router();
-import UserRecord from "./controllers/UserRecord.js";
-import UserController from "./controllers/user.controller.js";
+import UserRecord from "./UserRecord.js";
+import UsersModel from "./users.model";
+import UserController from "./user.controller.js";
 
-const CtrlUser = new UserController(UserRecord);
+const router = Router();
+const userRecord  = new UserRecord(UsersModel);
+const CtrlUser = new UserController(userRecord);
 
 // router.post('/create',authJwt.verify
 //                             ,type_user.verify_super_admin

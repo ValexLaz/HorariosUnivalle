@@ -1,7 +1,8 @@
 import RecordService from "../../common/recordService";
+
 class UniProgramsRecord extends RecordService{
-    constructor() {
-        super();
+    constructor(model) {
+        super(model);
     }
 }
 export  default UniProgramsRecord;

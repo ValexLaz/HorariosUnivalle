@@ -4,28 +4,28 @@ import bcrypt from "bcryptjs"
 const users_schema = new mongoose.Schema({
   name: {
     type: String,
-    required: true,
+
   },
   last_name: {
     type: String,
-    required: true,
+
   },
   password: {
     type: String,
-    required: true,
+
   },
   email: {
     type: String,
-    required: true,
+
   },
   users_type_id: {
     type: String,
-    required: true,
+
     ref: 'users_type', // Referencia al modelo users_type
   },
   university_program_id: [{
     type: String,
-    required: true,
+
     ref: 'university_program', // Referencia al modelo university_programs
   }],
 });

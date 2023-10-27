@@ -5,19 +5,19 @@ const university_programs_schema= new mongoose.Schema({
   id: {
     type: String,
     unique: true,
-    required: true,
+
   },
   name: {
     type: String,
-    required: true,
+
   },
   description: {
     type: String,
-    required: true,
+
   },
   faculty_id: {
     type: String,
-    required: true,
+
     ref: 'faculty', // Referencia al modelo "faculties"
   },
 });

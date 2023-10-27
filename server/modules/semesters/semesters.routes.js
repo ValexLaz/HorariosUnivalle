@@ -1,7 +1,10 @@
 import  {Router} from "express";
 import SemestersController from "./semesters.controller";
 import SemesterRecord from "./SemesterRecord";
-const CtrlSemester = new SemestersController(SemesterRecord);
+import SemestersModel from "./semesters.model";
+
+const semesterRecord = new SemesterRecord(SemestersModel)
+const CtrlSemester = new SemestersController(semesterRecord);
 
 const router = Router();
 

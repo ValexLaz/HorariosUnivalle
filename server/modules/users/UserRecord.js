@@ -1,13 +1,14 @@
-import RecordService from "../../../common/recordService";
-import User from "../models/users.model";
-import * as tokenJWT from "../../../config/auth";
+import RecordService from "../../common/recordService";
+import User from "./users.model";
+import * as tokenJWT from "../../config/auth";
 
 class UserRecord extends RecordService{
     constructor() {
         super(User);
-
+        this.addRecord = this.addRecord.bind(this);
+        this.signing = this.signing.bind(this);
     }
-    async signin(email,password){
+    async signing(email,password){
         try {
             const user = await this.model.findOne({ email }).populate('users_type_id').exec();
             if (!user) {
