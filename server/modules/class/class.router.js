@@ -7,9 +7,9 @@ const router = Router();
 const classRecord = new ClassRecord(Class);
 const CtrlClass =  new  ClassController(classRecord)
 
-router.post('/create',CtrlClass.add_record);
-router.delete("/:id",CtrlClass.delete_record);
-router.put("/:id",CtrlClass.update_record);
+router.post('/create',CtrlClass.createRecord);
+router.delete("/:id",CtrlClass.deleteRecordById);
+router.put("/:id",CtrlClass.updateRecord);
 router.get('/:id',CtrlClass.getRecordById)
 router.get('/semester/:id',CtrlClass.getAllClassBySemester);
 export default router;

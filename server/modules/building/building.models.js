@@ -1,5 +1,5 @@
 import { Schema, model } from "mongoose";
-
+//edificios
 const buildings_schema = new Schema({
     name: {
         type: String,

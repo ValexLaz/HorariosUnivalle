@@ -1,31 +1,69 @@
+
 class ParentController {
     constructor(recordService){
-        this.recordService = recordService;
+        this.recordService = recordService ;
     }
-    add_record = async (req,res) =>{
-       const new_record =  await this.recordService.create_record(req.body);
-       this.response(res,new_record);
+    responseError(res, {message, statusCode} ={}){
+        const response  = {
+            statusCode:statusCode || 404,
+            msg:message || "Internal Server Error"
+        }
+        return this.response(res,response);
     }
-     delete_record  = async(req,res)=>{
-        const delete_record = await this.recordService.delete_record_by_id(req.params.id);
-        this.response(res,delete_record)
+    responseSuccess(res,{data ,message,statusCode }){
+        const response = {
+            statusCode:statusCode || 200,
+            msg:message || 'ok',
+            data:data || {},
+        }
+        return this.response(res,response);
     }
-     update_record  = async(req,res)=>{
-        const {id} = req.params;
-        const updated_record = await this.recordService.update_record(id,req.body);
-        this.response(res,updated_record);
+    response(res,data){
+        return res.status(data.statusCode).json(data);
     }
-     get_all_records  = async(req,res)=>{
-        const records = await this.recordService.get_all_records_by_param({})
-        this.response(res,records);
+    createRecord = async (req,res) =>{
+        try {
+            const newRecord =await this.recordService.create(req.body);
+            console.log(newRecord);
+            this.responseSuccess(res,{data:newRecord});
+        } catch (e) {
+            this.responseError(res,{message:e.message});
+        }
     }
-     getRecordById  = async(req,res)=>{
-        const records = await this.recordService.
-            get_one_record_by_params({_id:req.params.id});
-        this.response(res,records);
+    deleteRecordById  = async(req,res)=>{
+        try {
+            const delete_record = await this.recordService.findByIdAndDelete(req.params.id,{new:true});
+            if(!delete_record) return this.responseError(res,{message:"source not found"})
+            this.responseSuccess(res, {data:delete_record,message:'source deleted',statusCode:200})
+        }catch (e) {
+            this.responseError(res,{message:e.message})
+        }
     }
-    response(res,data={statusCode:200}){
-        res.status(data.statusCode).json(data);
+    updateRecord  = async(req,res)=>{
+        try {
+            const {id} = req.params;
+            const updatedRecord = await this.recordService.findByIdAndUpdate(id,req.body,{new:true});
+            this.responseSuccess(res,{data:updatedRecord})
+        }catch (e) {
+            this.responseError(res,{message:e.message});
+        }
+    }
+    getAllRecords  = async(req,res)=>{
+        try {
+            const records = await this.recordService.find({});
+            this.responseSuccess(res,{data:records});
+        }catch (e) {
+            this.responseError(res,{message:e.message})
+        }
+    }
+    getRecordById  = async(req,res)=>{
+        try {
+            const records = await this.recordService.findById(req.params.id);
+            if(!records) return this.responseError(res,{message:"source not found"});
+            this.responseSuccess(res,{data:records});
+        }catch (e) {
+            this.responseError(res,{message:e.message});
+        }
     }
 }
 export default ParentController;

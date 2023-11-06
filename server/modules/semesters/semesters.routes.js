@@ -8,8 +8,8 @@ const CtrlSemester = new SemestersController(semesterRecord);
 
 const router = Router();
 
-router.post('/create',CtrlSemester.add_record);
-router.delete("/:id",CtrlSemester.delete_record);
-router.put("/:id",CtrlSemester.update_record);
+router.post('/create',CtrlSemester.createRecord);
+router.delete("/:id",CtrlSemester.deleteRecordById);
+router.put("/:id",CtrlSemester.updateRecord);
 router.get('/program/:id',CtrlSemester.getAllSemesterByProgram);
 export default router;

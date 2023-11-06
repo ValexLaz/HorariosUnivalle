@@ -6,10 +6,12 @@ class SemestersController extends ParentController{
      this.getAllSemesterByProgram = this.getAllSemesterByProgram.bind(this);
     }
     async getAllSemesterByProgram(req,res){
-        const {id} = req.params;
-        const semesters = await this.recordService
-                                        .get_all_records_by_param({university_program_id:id})
-        this.response(res,semesters)
+        try {
+            const semesters =await  this.recordService.find({university_program_id:req.params.id});
+            this.responseSuccess(res,{data:semesters});
+        }catch (e) {
+            this.responseError(res,{message:e.message});
+        }
     }
 }
 export  default SemestersController;

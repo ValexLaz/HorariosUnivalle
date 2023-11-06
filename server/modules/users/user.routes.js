@@ -13,9 +13,9 @@ const CtrlUser = new UserController(userRecord);
 //                             ,type_user.verify_super_admin
 //                             ,CtrlUser.create_record);
 router.post('/create',CtrlUser.create_record);
-router.delete("/:id",CtrlUser.delete_record);
-router.put("/:id",CtrlUser.update_record);
-router.get('/all',authJwt.verify,CtrlUser.get_all_records);
+router.delete("/:id",CtrlUser.deleteRecordById);
+router.put("/:id",CtrlUser.updateRecord);
+router.get('/all',CtrlUser.getAllRecords);
 router.get('/:id',CtrlUser.getRecordById);
 router.post('/signing',CtrlUser.signing);
 export default router;

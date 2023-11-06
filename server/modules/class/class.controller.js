@@ -5,11 +5,12 @@ class ClassController extends ParentController{
         this.getAllClassBySemester = this.getAllClassBySemester.bind(this);
     }
     async getAllClassBySemester(req,res){
-        const {id} = req.params;
-        const classes = await this.
-                                            recordService.
-                                            get_all_records_by_param({id_semester:id});
-        this.response(res,classes);
+        try {
+            const semesters = this.recordService.find({id_semester:req.params.id})
+            this.responseSuccess(res,{data:semesters});
+        }catch (e) {
+            this.responseError(res,{message:e.message});
+        }
     }
 
 }

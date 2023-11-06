@@ -6,9 +6,9 @@ const classroom_types_schema = new Schema({
         required: true,
     },
     description: {
-        type: String,
+    type: String,
         required: true,
-    }
+}
 });
 
 export default model("classroom_type", classroom_types_schema);

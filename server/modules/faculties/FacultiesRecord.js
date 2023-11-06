@@ -1,4 +1,4 @@
-import RecordService from "../../common/recordService";
+import RecordService from "../../common/RecordService";
 
 class FacultiesRecord extends RecordService{
     constructor(model) {

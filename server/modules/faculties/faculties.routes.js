@@ -7,8 +7,10 @@ const facultyRecord = new FacultiesRecord(Faculty);
 const CtrlFaculty = new FacultiesController(facultyRecord);
 const router = Router();
 
-router.post('/create',CtrlFaculty.add_record)
+router.post('/create',CtrlFaculty.createRecord)
+router.get('/all',CtrlFaculty.getAllRecords);
 router.get('/:id',CtrlFaculty.getRecordById);
-router.put('/:id',CtrlFaculty.update_record);
-router.delete('/id',CtrlFaculty.delete_record);
+router.put('/:id',CtrlFaculty.updateRecord);
+router.delete('/id',CtrlFaculty.deleteRecordById);
+
 export default  router;
