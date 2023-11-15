@@ -12,6 +12,7 @@ import ProfessorRoutes from "./modules/professors/professor.routes";
 import ScheduleRoute from "./modules/schedule/schedule.route";
 import TimeAvailsRoutes from "./modules/time_availabilities/time_avails.routes";
 import ClassProfessorRoutes from "./modules/class_professor/class_professor.routes";
+import classroom_availabilitiesRoutes from "./modules/classroom_availabilities/classroom_availabilities.routes.js";
 const router = express.Router();
 
 router.use('/user',userRoutes);
@@ -21,8 +22,11 @@ router.use('/class/professor',ClassProfessorRoutes)
 router.use('/faculty',facultyRoutes);
 router.use('/uniPrograms',UniProgramsRoutes);
 router.use('/building',BuildingRoutes);
+router.use('/classroom/avails',classroom_availabilitiesRoutes);
 router.use('/classroom/types',ClassroomTypesRoutes);
 router.use('/classroom',ClassroomsRoutes);
+
+
 router.use('/professor/avails',ProfessorAvailabilitiesRoutes);
 router.use('/professor',ProfessorRoutes);
 router.use('/schedule',ScheduleRoute);
