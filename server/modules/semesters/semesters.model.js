@@ -5,7 +5,7 @@ const semesters_schema = new mongoose.Schema({
   name: {
     type: String,
   },
-  university_program_id: {
+  university_program: {
     type: String,
     ref: 'university_program', // Referencia al modelo "university_programs"
   },

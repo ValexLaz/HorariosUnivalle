@@ -33,7 +33,11 @@ users_schema.statics.encrypt_password = async (password)=>{
 users_schema.statics.compare_password = async (password,receive_password)=>{
   return await bcrypt.compare(password,receive_password);
 };
-
+users_schema.methods.toJSON = function() {
+  const obj = this.toObject();
+  delete obj.password;
+  return obj;
+};
 const users_model = mongoose.model('user', users_schema);
 
 export default users_model;

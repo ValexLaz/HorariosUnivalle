@@ -11,6 +11,6 @@ router.post('/create',CtrlFaculty.createRecord)
 router.get('/all',CtrlFaculty.getAllRecords);
 router.get('/:id',CtrlFaculty.getRecordById);
 router.put('/:id',CtrlFaculty.updateRecord);
-router.delete('/id',CtrlFaculty.deleteRecordById);
+router.delete('/:id',CtrlFaculty.deleteRecordById);
 
 export default  router;

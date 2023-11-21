@@ -13,11 +13,15 @@ const class_schema =  new Schema({
         type:Number,
         required:true
     },
-    id_semester:{
+    semester:{
         type:String,
         ref:"semester",
         required:true
+    },
+    university_program:{
+        type:Schema.Types.ObjectId,
+        ref:'university_program',
+        required:true
     }
 });
-
 export default model("class",class_schema);

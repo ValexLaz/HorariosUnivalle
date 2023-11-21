@@ -10,12 +10,13 @@ class UserRecord extends RecordService{
             const newUser = {
                 name:data.name,
                 last_name:data.last_name,
-                password: await this.encrypt_password(data.password),
+                password: await this.model.encrypt_password(data.password),
                 email:data.email,
                 users_type_id:data.users_type_id,
                 university_program_id:data.university_program_id
             };
-            return await this.create(newUser);
+            let user = await this.create(newUser);
+            return  user
         }catch (e) {
             return new Error(e.message);
         }

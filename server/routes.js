@@ -18,7 +18,8 @@ const router = express.Router();
 router.use('/user',userRoutes);
 router.use('/semester',semesterRoutes);
 router.use('/class',classRouter);
-router.use('/class/professor',ClassProfessorRoutes)
+router.use('/professor',ProfessorRoutes);
+router.use('/professor/class',ClassProfessorRoutes)
 router.use('/faculty',facultyRoutes);
 router.use('/uniPrograms',UniProgramsRoutes);
 router.use('/building',BuildingRoutes);
@@ -28,7 +29,7 @@ router.use('/classroom',ClassroomsRoutes);
 
 
 router.use('/professor/avails',ProfessorAvailabilitiesRoutes);
-router.use('/professor',ProfessorRoutes);
+
 router.use('/schedule',ScheduleRoute);
 router.use('/time/avails',TimeAvailsRoutes);
 

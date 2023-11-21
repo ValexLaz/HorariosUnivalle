@@ -24,7 +24,6 @@ class ParentController {
     createRecord = async (req,res) =>{
         try {
             const newRecord =await this.recordService.create(req.body);
-            console.log(newRecord);
             this.responseSuccess(res,{data:newRecord});
         } catch (e) {
             this.responseError(res,{message:e.message});
@@ -32,7 +31,7 @@ class ParentController {
     }
     deleteRecordById  = async(req,res)=>{
         try {
-            const delete_record = await this.recordService.findByIdAndDelete(req.params.id,{new:true});
+            const delete_record = await this.recordService.model.findByIdAndDelete(req.params.id,{new:true});
             if(!delete_record) return this.responseError(res,{message:"source not found"})
             this.responseSuccess(res, {data:delete_record,message:'source deleted',statusCode:200})
         }catch (e) {
@@ -42,7 +41,7 @@ class ParentController {
     updateRecord  = async(req,res)=>{
         try {
             const {id} = req.params;
-            const updatedRecord = await this.recordService.findByIdAndUpdate(id,req.body,{new:true});
+            const updatedRecord = await this.recordService.model.findByIdAndUpdate(id,req.body,{new:true});
             this.responseSuccess(res,{data:updatedRecord})
         }catch (e) {
             this.responseError(res,{message:e.message});
@@ -50,7 +49,7 @@ class ParentController {
     }
     getAllRecords  = async(req,res)=>{
         try {
-            const records = await this.recordService.find({});
+            const records = await this.recordService.model.find({});
             this.responseSuccess(res,{data:records});
         }catch (e) {
             this.responseError(res,{message:e.message})
@@ -58,7 +57,7 @@ class ParentController {
     }
     getRecordById  = async(req,res)=>{
         try {
-            const records = await this.recordService.findById(req.params.id);
+            const records = await this.recordService.model.findById(req.params.id);
             if(!records) return this.responseError(res,{message:"source not found"});
             this.responseSuccess(res,{data:records});
         }catch (e) {

@@ -5,7 +5,7 @@ const classrooms_schema = new Schema({
         type: String,
         required: true,
     },
-    id_classroom_type: {
+    classroom_type: {
         type: Schema.Types.ObjectId,
         ref: "classroom_type",
         required: true,
@@ -14,7 +14,7 @@ const classrooms_schema = new Schema({
         type: String,
         required: true,
     },
-    id_building: {
+    building: {
         type: Schema.Types.ObjectId,
         ref: "building",
         required: true,

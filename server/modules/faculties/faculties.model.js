@@ -1,4 +1,4 @@
-import mongoose from 'mongoose';
+import mongoose, {Schema} from 'mongoose';
 // Esquema de la colección "faculties"
 const faculties_schema = new mongoose.Schema({
   name: {
@@ -7,12 +7,12 @@ const faculties_schema = new mongoose.Schema({
   description: {
     type: String,
   },
-  id_module_id: {
-    type: String,
-    ref: 'module', // Referencia al modelo "modules"
+  building: {
+    type: Schema.Types.ObjectId,
+    ref: "building",
   },
 });
-// Crea el modelo "faculties" utilizando el esquema
+
 const faculties_model = mongoose.model('faculty', faculties_schema);
 
 export default faculties_model;

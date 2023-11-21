@@ -6,7 +6,13 @@ class ClassController extends ParentController{
     }
     async getAllClassBySemester(req,res){
         try {
-            const semesters = this.recordService.find({id_semester:req.params.id})
+            console.log("Entrando ")
+            const semesters = await this.recordService.model.find({semester:req.params.id}).populate(
+                {
+                    path:"semester"
+                }
+            )
+            console.log('data',semesters);
             this.responseSuccess(res,{data:semesters});
         }catch (e) {
             this.responseError(res,{message:e.message});

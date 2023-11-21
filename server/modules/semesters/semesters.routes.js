@@ -11,5 +11,6 @@ const router = Router();
 router.post('/create',CtrlSemester.createRecord);
 router.delete("/:id",CtrlSemester.deleteRecordById);
 router.put("/:id",CtrlSemester.updateRecord);
-router.get('/program/:id',CtrlSemester.getAllSemesterByProgram);
+router.get('/all',CtrlSemester.getAllRecords)
+router.get('/uniPrograms/:id',CtrlSemester.getAllSemesterByProgram);
 export default router;

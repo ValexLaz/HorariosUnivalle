@@ -1,4 +1,4 @@
-import Users_type from "../../users_types/users_type.model";
+
 import * as response from "../../../common/response.js";
 export const verify_super_admin = async (req,res,next)=>{
     const {users_type_name} = req.userData;

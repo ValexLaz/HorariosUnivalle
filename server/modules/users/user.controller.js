@@ -9,11 +9,12 @@ class UserController extends ParentController{
         this.create_record = this.create_record.bind(this);
     }
     async signing(req,res){
+        console.log(req.body)
         const {email,password} = req.body;
         try {
-            const user =  await  this.recordService.findOne({ email })
+            const user =  await  this.recordService.model.findOne({ email })
             console.log(user)
-            const isPasswordValid = await this.recordService.compare_password(password, user.password);
+            const isPasswordValid = await this.recordService.model.compare_password(password, user.password);
             if (!isPasswordValid) {
                 return this.responseError(res,{message:'password incorrect'});
             }
@@ -43,7 +44,7 @@ class UserController extends ParentController{
     }
     getAllRecords  = async(req,res)=>{
         try {
-            const records = await this.recordService.find({},{password:0,__v:0,});
+            const records = await this.recordService.model.find({},{password:0,__v:0,});
             this.responseSuccess(res,{data:records});
         }catch (e) {
             this.responseError(res,{message:e.message})

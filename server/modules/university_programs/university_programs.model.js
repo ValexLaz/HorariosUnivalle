@@ -1,4 +1,4 @@
-import mongoose from 'mongoose';
+import mongoose, {Schema} from 'mongoose';
 //Carreras (Ing. de sistemas , Biomedica,etc)
 // Esquema de la colección "university_programs"
 const university_programs_schema= new mongoose.Schema({
@@ -10,9 +10,8 @@ const university_programs_schema= new mongoose.Schema({
     type: String,
 
   },
-  faculty_id: {
-    type: String,
-
+  faculty: {
+    type:Schema.Types.ObjectId,
     ref: 'faculty', // Referencia al modelo "faculties"
   },
 });

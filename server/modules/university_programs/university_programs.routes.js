@@ -10,5 +10,7 @@ const router = Router();
 router.post('/create',CtrUniProgram.createRecord);
 router.delete("/:id",CtrUniProgram.deleteRecordById);
 router.put("/:id",CtrUniProgram.updateRecord);
+router.get('/all',CtrUniProgram.getAllRecords);
 router.get('/:id',CtrUniProgram.getRecordById);
+router.get('/semester/:id',CtrUniProgram.getAllRecordsBySemester)
 export default router;

@@ -7,7 +7,7 @@ class SemestersController extends ParentController{
     }
     async getAllSemesterByProgram(req,res){
         try {
-            const semesters =await  this.recordService.find({university_program_id:req.params.id});
+            const semesters =await  this.recordService.model.find({university_program:req.params.id},{university_program:0});
             this.responseSuccess(res,{data:semesters});
         }catch (e) {
             this.responseError(res,{message:e.message});
