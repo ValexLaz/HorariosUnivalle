@@ -28,7 +28,11 @@ class UserController extends ParentController{
                 secure: true,
                 sameSite: 'Strict',
             });
-            this.responseSuccess(res,{data:{token}})
+            this.responseSuccess(res,{data:{
+                token,
+                [user.user_type]: true
+
+            }})
         }catch (e) {
             console.log(e)
             this.responseError(res,{message:e.message});

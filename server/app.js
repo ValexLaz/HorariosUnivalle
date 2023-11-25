@@ -1,7 +1,7 @@
 import express from "express";
 import config from "./config/config.js";
 import router from "./routes";
-
+import cookieParser from "cookie-parser";
 import cors from "cors";
 import morgan from "morgan";
 
@@ -18,7 +18,11 @@ class App{
         this.#app.use('/api',router);
     }
     #configure(){
-        this.#app.use(cors());
+        this.#app.use(cors({
+            origin: 'http://localhost:3000',
+            credentials: true
+          }));
+        this.#app.use(cookieParser());
         this.#app.use(morgan('dev'));
         this.#app.use(express.json());
     }

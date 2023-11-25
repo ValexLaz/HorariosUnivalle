@@ -12,7 +12,7 @@ class UserRecord extends RecordService{
                 last_name:data.last_name,
                 password: await this.model.encrypt_password(data.password),
                 email:data.email,
-                users_type_id:data.users_type_id,
+                user_type:data.user_type,
                 university_program_id:data.university_program_id
             };
             let user = await this.create(newUser);
