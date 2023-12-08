@@ -1,4 +1,4 @@
-import RecordService from "../../common/RecordService";
+import RecordService from "../../common/RecordService.mjs";
 
 class UserRecord extends RecordService{
     constructor(model) {

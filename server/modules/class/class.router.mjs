@@ -1,10 +1,10 @@
 import  {Router} from "express";
 import ClassController from "./class.controller";
-import ClassRecord from "./ClassRecord.js";
-import Class from "./class.model.js";
+import ClassRecord from "./ClassRecord.mjs";
+
 
 const router = Router();
-const classRecord = new ClassRecord(Class);
+const classRecord = new ClassRecord();
 const CtrlClass =  new  ClassController(classRecord)
 
 router.post('/create',CtrlClass.createRecord);

@@ -1,21 +1,31 @@
 import { Schema, model } from "mongoose";
 
 const schedules_schema = new Schema({
-    class_professor_id: {
+    class_professor: {
         type: Schema.Types.ObjectId,
         ref: "class_professor",
         required: true,
     },
-    classroom_id: {
+    semester:{
         type: Schema.Types.ObjectId,
-        ref: "classroom",
+        ref: "semester",
         required: true,
+    },
+    university_program:{
+        type: Schema.Types.ObjectId,
+        ref: "university_program",
+        required: true,
+    },
+    group:{
+        type:String,
+        required:true
     },
     availability: [{
         type: Schema.Types.ObjectId,
-        ref: "time_availability",
+        ref: "working_day",
         required: true,
-    }]
+    }],
+
 });
 
 export default model("schedule", schedules_schema);

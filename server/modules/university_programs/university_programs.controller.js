@@ -1,4 +1,4 @@
-import ParentController from "../../common/ParentController";
+import ParentController from "../../common/ParentController.js";
 
 
 class UniProgramsController extends ParentController{

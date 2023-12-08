@@ -1,8 +1,8 @@
-import RecordService from "../../common/RecordService";
-
+import RecordService from "../../common/RecordService.mjs";
+import FacultiesModel from "./faculties.model.mjs";
 class FacultiesRecord extends RecordService{
-    constructor(model) {
-        super(model);
+    constructor() {
+        super(FacultiesModel);
     }
 
     async create(data) {

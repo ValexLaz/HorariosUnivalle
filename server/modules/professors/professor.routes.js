@@ -1,6 +1,6 @@
 import BaseRouter from "../../common/BaseRouter";
 import ProfessorsController from "./ProfessorsController";
-import ProfessorRecord from "./ProfessorRecord";
+import ProfessorRecord from "./ProfessorRecord.mjs";
 
 const ctrlProfessor = new ProfessorsController(new ProfessorRecord());
 class ProfessorRoutes extends BaseRouter{

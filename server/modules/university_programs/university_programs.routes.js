@@ -1,9 +1,8 @@
 import  {Router} from "express";
-import UniProgramsRecord from "./UniProgramsRecord";
-import UniProgramsController from "./university_programs.controller";
-import University_programsModel from "./university_programs.model";
+import UniProgramsRecord from "./UniProgramsRecord.js";
+import UniProgramsController from "./university_programs.controller.js";
 
-const uniProgramRecord = new UniProgramsRecord(University_programsModel);
+const uniProgramRecord = new UniProgramsRecord();
 const CtrUniProgram = new UniProgramsController(uniProgramRecord);
 const router = Router();
 

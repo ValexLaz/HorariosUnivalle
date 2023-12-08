@@ -1,5 +1,5 @@
-import RecordService from "../../common/RecordService";
-import professorsModel from "./professors.model";
+import RecordService from "../../common/RecordService.mjs";
+import professorsModel from "./professors.model.mjs";
 class ProfessorRecord extends RecordService{
     constructor() {
         super(professorsModel);

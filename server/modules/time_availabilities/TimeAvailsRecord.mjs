@@ -1,5 +1,5 @@
-import RecordService from "../../common/RecordService";
-import Time_availabilities from "./time_availabilities";
+import RecordService from "../../common/RecordService.mjs";
+import Time_availabilities from "./time_availabilities.mjs";
 class TimeAvailsRecord extends RecordService{
     constructor() {
         super(Time_availabilities);

@@ -1,6 +1,6 @@
-import BaseRouter from "../../common/BaseRouter";
-import TimeAvailsController from "./TimeAvailsController";
-import TimeAvailsRecord from "./TimeAvailsRecord";
+import BaseRouter from "../../common/BaseRouter.js";
+import TimeAvailsController from "./TimeAvailsController.js";
+import TimeAvailsRecord from "./TimeAvailsRecord.mjs";
 
 const ctrlTimeAvail = new TimeAvailsController(new TimeAvailsRecord());
 const baseRoute = new BaseRouter(ctrlTimeAvail);

@@ -1,5 +1,5 @@
 import JWT from "jsonwebtoken";
-import config from "./config";
+import config from "./config.mjs";
 
 export const generateToken =(payload,timeExpired)=>{
     return JWT.sign(payload, config.Secret.SECRET_KEY, {expiresIn: timeExpired});

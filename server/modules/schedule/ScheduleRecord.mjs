@@ -1,5 +1,5 @@
-import RecordService from "../../common/RecordService";
-import ScheduleModel from "./schedule.model";
+import RecordService from "../../common/RecordService.mjs";
+import ScheduleModel from "./models/schedule.model.mjs";
 class ScheduleRecord extends RecordService{
     constructor() {
         super(ScheduleModel);

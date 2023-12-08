@@ -1,5 +1,4 @@
 import { Schema, model } from "mongoose";
-
 const professors_schema = new Schema({
     name: {
         type: String,
@@ -20,7 +19,14 @@ const professors_schema = new Schema({
     email: {
         type: String,
         required: true,
+    },
+    academic_hours:{
+        type:Number,
+        required :true
+    },
+    type_professor:{
+        type:String,
+        required:true
     }
 });
-
 export default model("professor", professors_schema);

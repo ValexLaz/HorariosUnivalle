@@ -2,7 +2,7 @@ import {Router} from "express";
 import {authJwt} from "../../middleware";
 import * as type_user from "./middleware/verifyTypeUser.js";
 import UserRecord from "./UserRecord.js";
-import UsersModel from "./users.model";
+import UsersModel from "./users.model.js";
 import UserController from "./user.controller.js";
 
 const router = Router();

@@ -1,9 +1,8 @@
 import {Router} from "express";
 import FacultiesController from "./faculties.controller";
-import FacultiesRecord from "./FacultiesRecord";
-import Faculty from "./faculties.model.js";
+import FacultiesRecord from "./FacultiesRecord.mjs";
 
-const facultyRecord = new FacultiesRecord(Faculty);
+const facultyRecord = new FacultiesRecord();
 const CtrlFaculty = new FacultiesController(facultyRecord);
 const router = Router();
 

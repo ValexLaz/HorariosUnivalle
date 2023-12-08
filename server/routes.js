@@ -1,18 +1,20 @@
 import express from "express";
 import userRoutes from "./modules/users/user.routes.js";
 import semesterRoutes from "./modules/semesters/semesters.routes.js";
-import classRouter from "./modules/class/class.router";
-import facultyRoutes from "./modules/faculties/faculties.routes";
-import UniProgramsRoutes from "./modules/university_programs/university_programs.routes";
-import BuildingRoutes from "./modules/building/building.routes";
-import ClassroomTypesRoutes from "./modules/classroom_types/classroom_types.routes";
-import ClassroomsRoutes from "./modules/classrooms/classrooms.routes";
-import ProfessorAvailabilitiesRoutes from "./modules/professor_availabilities/professor_availabilities.routes";
-import ProfessorRoutes from "./modules/professors/professor.routes";
-import ScheduleRoute from "./modules/schedule/schedule.route";
-import TimeAvailsRoutes from "./modules/time_availabilities/time_avails.routes";
-import ClassProfessorRoutes from "./modules/class_professor/class_professor.routes";
+import classRouter from "./modules/class/class.router.mjs";
+import facultyRoutes from "./modules/faculties/faculties.routes.js";
+import UniProgramsRoutes from "./modules/university_programs/university_programs.routes.js";
+import BuildingRoutes from "./modules/building/building.routes.js";
+import ClassroomTypesRoutes from "./modules/classroom_types/classroom_types.routes.js";
+import ClassroomsRoutes from "./modules/classrooms/classrooms.routes.js";
+import ProfessorAvailabilitiesRoutes from "./modules/professor_availabilities/professor_availabilities.routes.js";
+import ProfessorRoutes from "./modules/professors/professor.routes.js";
+import ScheduleRoute from "./modules/schedule/schedule.route.js";
+import TimeAvailsRoutes from "./modules/time_availabilities/time_avails.routes.js";
+import ClassProfessorRoutes from "./modules/class_professor/class_professor.routes.js";
 import classroom_availabilitiesRoutes from "./modules/classroom_availabilities/classroom_availabilities.routes.js";
+import ClusterRoutes from "./modules/cluster/cluster.routes";
+
 const router = express.Router();
 
 router.use('/user',userRoutes);
@@ -32,6 +34,6 @@ router.use('/professor/avails',ProfessorAvailabilitiesRoutes);
 
 router.use('/schedule',ScheduleRoute);
 router.use('/time/avails',TimeAvailsRoutes);
-
+router.use('/cluster',ClusterRoutes)
 
 export default router;

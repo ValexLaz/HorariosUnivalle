@@ -13,6 +13,10 @@ const class_schema =  new Schema({
         type:Number,
         required:true
     },
+    hours_week:{
+        type:Number,
+        required:true
+    },
     semester:{
         type:String,
         ref:"semester",
@@ -22,6 +26,11 @@ const class_schema =  new Schema({
         type:Schema.Types.ObjectId,
         ref:'university_program',
         required:true
+    },
+    classroom_type:{
+        type:Schema.Types.ObjectId,
+        require:true,
+        ref:"classroom_type"
     }
 });
 export default model("class",class_schema);

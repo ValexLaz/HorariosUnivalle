@@ -1,9 +1,9 @@
-import RecordService from "../../common/RecordService";
+import RecordService from "../../common/RecordService.mjs";
 import SemestersModel from "./semesters.model";
 
 class SemesterRecord extends RecordService{
-    constructor(model) {
-        super(model);
+    constructor() {
+        super(SemestersModel);
     }
 }
 export  default SemesterRecord;
